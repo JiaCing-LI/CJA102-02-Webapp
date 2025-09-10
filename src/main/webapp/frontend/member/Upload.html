@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>會員上傳圖片</title>
+  </head>
+  <body>
+    姓名: <input type="text" id="memName" /><br />
+    上傳照片: <input type="file" id="memPicInput" /><br />
+    <button onclick="uploadAndShow()">送出並顯示圖片</button>
+
+    <hr />
+    <p>看會員圖片：</p>
+    <img id="memPic" alt="會員圖片會顯示在這裡" width="200" />
+
+    <script>
+    function uploadAndShow() {
+    	  let formData = new FormData();
+    	  formData.append("memName", document.getElementById("memName").value);
+    	  formData.append("memPic", document.getElementById("memPicInput").files[0]);
+
+    	  fetch(contextPath + "/uploadServlet.do", {
+    	    method: "POST",
+    	    body: formData,
+    	  })
+    	    .then((res) => res.json()) // { memId: 1, memName: "Wa" }
+    	    .then((data) => {
+    	      let imgUrl = contextPath + "/getPicture?memId=" + data.memId;
+    	      document.getElementById("memPic").src = imgUrl;
+    	    })
+    	    .catch((err) => console.error("上傳失敗:", err));
+    	}
+    </script>
+  </body>
+</html>
