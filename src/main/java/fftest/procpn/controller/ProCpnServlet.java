@@ -29,7 +29,7 @@ public class ProCpnServlet extends HttpServlet {
 	private void processRequest(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
 		// ⭐ CORS Header（前端 VS Code Live Server 必要）
-		res.setHeader("Access-Control-Allow-Origin", "http://localhost:5050");
+		res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
 		res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
 		res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 

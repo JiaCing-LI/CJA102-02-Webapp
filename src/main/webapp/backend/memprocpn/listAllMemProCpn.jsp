@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.*"%>
 <%@ page import="fftest.memprocpn.model.*"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
 MemProCpnService memProCpnSvc = new MemProCpnService();
@@ -83,7 +83,8 @@ MemProCpnService memProCpnSvc = new MemProCpnService();
             <c:otherwise>未知</c:otherwise>
           </c:choose>
         </td>
-        <td>${memProCpnVO.crtAt}</td>
+
+        <td><fmt:formatDate value="${memProCpnVO.crtAt}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
         <td>${memProCpnVO.rcvAt}</td>
         <td>${memProCpnVO.effStart}</td>
         <td>${memProCpnVO.effEnd}</td>

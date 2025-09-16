@@ -1,16 +1,18 @@
 package fftest.procpn.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProCpnService {
-	private ProCpnDAO_interface dao;
+	private ProCpnDAO dao;
 
 	public ProCpnService() {
-		dao = new ProCpnJDBCDAO(); // 或改成 HibernateDAO / JNDIDAO
+		// dao = new ProCpnJDBCDAO(); // 或改成 HibernateDAO / JNDIDAO
+		dao = new ProCpnDAOImpl();
 	}
 
-	public ProCpnVO addProCpn(String cpnName, byte discType, double discValue, int minSpend, java.sql.Date startDate,
-			int validDays, String cpnDesc, byte isActive, byte applScope) {
+	public ProCpnVO addProCpn(String cpnName, byte discType, BigDecimal discValue, int minSpend,
+			java.sql.Date startDate, int validDays, String cpnDesc, byte isActive, byte applScope) {
 
 		ProCpnVO proCpnVO = new ProCpnVO();
 		proCpnVO.setCpnName(cpnName);
@@ -30,7 +32,7 @@ public class ProCpnService {
 	/**
 	 * 修改折價券
 	 */
-	public ProCpnVO updateProCpn(Integer proCpnId, String cpnName, byte discType, double discValue, int minSpend,
+	public ProCpnVO updateProCpn(Integer proCpnId, String cpnName, byte discType, BigDecimal discValue, int minSpend,
 			java.sql.Date startDate, int validDays, String cpnDesc, byte isActive, byte applScope) {
 
 		ProCpnVO proCpnVO = new ProCpnVO();

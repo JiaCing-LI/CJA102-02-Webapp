@@ -1,19 +1,52 @@
 package fftest.procpn.model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pro_cpn")
 public class ProCpnVO implements java.io.Serializable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // 對應 AUTO_INCREMENT
+	@Column(name = "pro_cpn_id")
 	private Integer proCpnId; // PK
+
+	@Column(name = "cpn_name", nullable = false, length = 50)
 	private String cpnName; // 折價券名稱
+
+	@Column(name = "disc_type", nullable = false)
 	private Byte discType; // 0: 滿額折抵, 1: 百分比
-	private Double discValue; // 折扣數值
+
+	@Column(name = "disc_value", nullable = false, precision = 10, scale = 2)
+	private BigDecimal discValue; // 折扣數值
+
+	@Column(name = "min_spend")
 	private Integer minSpend; // 消費門檻金額
+
+	@Column(name = "start_date")
 	private Date startDate; // 開始日期
+
+	@Column(name = "valid_days")
 	private Integer validDays; // 有效天數
+
+	@Column(name = "cpn_desc", length = 200)
 	private String cpnDesc; // 折價券規則描述
+
+	@Column(name = "is_active", nullable = false)
 	private Byte isActive; // 0:未啟用, 1:啟用
-	private Timestamp crtAt; // 建立時間
+
+	@Column(name = "crt_at", nullable = false, insertable = false, updatable = false)
+	private Timestamp crtAt; // 建立時間 (由 DB 預設 CURRENT_TIMESTAMP)
+
+	@Column(name = "appl_scope", nullable = false)
 	private Byte applScope; // 0:全館, 1:指定小農, 2:指定商品
 
 	public Integer getProCpnId() {
@@ -40,11 +73,11 @@ public class ProCpnVO implements java.io.Serializable {
 		this.discType = discType;
 	}
 
-	public Double getDiscValue() {
+	public BigDecimal getDiscValue() {
 		return discValue;
 	}
 
-	public void setDiscValue(Double discValue) {
+	public void setDiscValue(BigDecimal discValue) {
 		this.discValue = discValue;
 	}
 
@@ -108,8 +141,8 @@ public class ProCpnVO implements java.io.Serializable {
 		super();
 	}
 
-	public ProCpnVO(Integer proCpnId, String cpnName, Byte discType, Double discValue, Integer minSpend, Date startDate,
-			Integer validDays, String cpnDesc, Byte isActive, Timestamp crtAt, Byte applScope) {
+	public ProCpnVO(Integer proCpnId, String cpnName, Byte discType, BigDecimal discValue, Integer minSpend,
+			Date startDate, Integer validDays, String cpnDesc, Byte isActive, Timestamp crtAt, Byte applScope) {
 		super();
 		this.proCpnId = proCpnId;
 		this.cpnName = cpnName;

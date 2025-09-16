@@ -65,7 +65,7 @@ MemProCpnVO memProCpnVO = (MemProCpnVO) request.getAttribute("memProCpnVO");
 	</ul>
 </c:if>
 <form action="${pageContext.request.contextPath}/backend/memprocpn/MemProCpn.do" method="post">
-    會員ID: <input type="text" name="memId" value="101"><br>
+    會員ID: <input type="text" name="memId" value="1"><br>
     折價券ID: <input type="text" name="proCpnId" value="5"><br>
     有效天數: <input type="text" name="validDays" value="30"><br>
     <input type="hidden" name="action" value="insert">

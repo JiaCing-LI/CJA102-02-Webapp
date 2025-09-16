@@ -62,7 +62,7 @@
   <jsp:useBean id="proCpnSvc" scope="page" class="fftest.procpn.model.ProCpnService" />
 
   <li>
-    <form method="post" action="procpn/proCpn.do">
+    <form method="post" action="backend/procpn/proCpn.do">
        <b>選擇折價券編號:</b>
        <select size="1" name="proCpnId">
          <c:forEach var="proCpnVO" items="${proCpnSvc.all}">

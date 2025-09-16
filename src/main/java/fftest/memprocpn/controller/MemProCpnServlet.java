@@ -167,7 +167,7 @@ public class MemProCpnServlet extends HttpServlet {
 				// 如果有錯誤，帶著 VO 回到表單
 				if (!errorMsgs.isEmpty()) {
 					req.setAttribute("memProCpnVO", memProCpnVO);
-					RequestDispatcher failureView = req.getRequestDispatcher("/memprocpn/addMemProCpn.jsp");
+					RequestDispatcher failureView = req.getRequestDispatcher("/backend/memprocpn/addMemProCpn.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -179,7 +179,7 @@ public class MemProCpnServlet extends HttpServlet {
 
 			} catch (Exception e) {
 				errorMsgs.add("參數格式錯誤: " + e.getMessage());
-				RequestDispatcher failureView = req.getRequestDispatcher("/memprocpn/addMemProCpn.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/backend/memprocpn/addMemProCpn.jsp");
 				failureView.forward(req, res);
 				return;
 			}
@@ -214,5 +214,6 @@ public class MemProCpnServlet extends HttpServlet {
 			RequestDispatcher successView = req.getRequestDispatcher(url);// 刪除成功後,轉交回送出刪除的來源網頁
 			successView.forward(req, res);
 		}
+
 	}
 }
