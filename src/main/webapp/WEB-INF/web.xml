@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
-  <display-name>FFtest</display-name>
+  <display-name>fftest</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -12,40 +12,33 @@
   <servlet>
     <servlet-name>ProCpnServlet</servlet-name>
     <servlet-class>fftest.procpn.controller.ProCpnServlet</servlet-class>
-</servlet>
-<servlet>
+  </servlet>
+  <servlet>
     <servlet-name>MemProCpnServlet</servlet-name>
     <servlet-class>fftest.memprocpn.controller.MemProCpnServlet</servlet-class>
-</servlet>
-<servlet>
+  </servlet>
+  <servlet>
     <servlet-name>MemServlet</servlet-name>
     <servlet-class>fftest.mem.controller.MemServlet</servlet-class>
-</servlet>
-<servlet>
+  </servlet>
+  <servlet>
     <servlet-name>GetPitctureServlet</servlet-name>
     <servlet-class>fftest.mem.controller.GetPitctureServlet</servlet-class>
-</servlet>
-
-
-<!-- Mapping -->
-
-	<servlet-mapping>
-		<servlet-name>ProCpnServlet</servlet-name>
-		<url-pattern>/backend/procpn/proCpn.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MemProCpnServlet</servlet-name>
-		<url-pattern>/backend/memprocpn/MemProCpn.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MemServlet</servlet-name>
-		<url-pattern>/frontend/mem/mem.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>GetPitctureServlet</servlet-name>
-		<url-pattern>/frontend/mem/getPicture.do</url-pattern>
-	</servlet-mapping>
-	
-	
-	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProCpnServlet</servlet-name>
+    <url-pattern>/backend/procpn/proCpn.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemProCpnServlet</servlet-name>
+    <url-pattern>/backend/memprocpn/MemProCpn.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemServlet</servlet-name>
+    <url-pattern>/frontend/mem/mem.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetPitctureServlet</servlet-name>
+    <url-pattern>/frontend/mem/getPicture.do</url-pattern>
+  </servlet-mapping>
 </web-app>
