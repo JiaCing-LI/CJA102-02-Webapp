@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.google.gson.Gson;
 
-import fftest.procpn.model.ProCpnService;
 import fftest.procpn.model.ProCpnVO;
+import fftest.procpn.service.ProCpnService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

@@ -60,7 +60,7 @@
 	    </FORM>
 	  </li>
 	
-	  <jsp:useBean id="MemProCpnSvc" scope="page" class="fftest.memprocpn.model.MemProCpnService" />
+	  <jsp:useBean id="MemProCpnSvc" scope="page" class="fftest.memprocpn.service.MemProCpnService" />
 	   
 	  <li>
 	     <FORM METHOD="post" ACTION="<%= request.getContextPath() %>/backend/memprocpn/MemProCpn.do" >

@@ -59,7 +59,7 @@
     </form>
   </li>
 
-  <jsp:useBean id="proCpnSvc" scope="page" class="fftest.procpn.model.ProCpnService" />
+  <jsp:useBean id="proCpnSvc" scope="page" class="fftest.procpn.service.ProCpnService" />
 
   <li>
     <form method="post" action="backend/procpn/proCpn.do">

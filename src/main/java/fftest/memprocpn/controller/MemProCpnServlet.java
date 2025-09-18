@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import fftest.memprocpn.model.MemProCpnService;
 import fftest.memprocpn.model.MemProCpnVO;
+import fftest.memprocpn.service.MemProCpnService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

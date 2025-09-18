@@ -1,6 +1,10 @@
-package fftest.memprocpn.model;
+package fftest.memprocpn.service;
 
 import java.util.List;
+
+import fftest.memprocpn.model.MemProCpnDAO_interface;
+import fftest.memprocpn.model.MemProCpnJDBCDAO;
+import fftest.memprocpn.model.MemProCpnVO;
 
 /**
  * 折價券明細 Service

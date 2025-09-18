@@ -1,7 +1,11 @@
-package fftest.procpn.model;
+package fftest.procpn.service;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import fftest.procpn.model.ProCpnDAO;
+import fftest.procpn.model.ProCpnDAOImpl;
+import fftest.procpn.model.ProCpnVO;
 
 public class ProCpnService {
 	private ProCpnDAO dao;
