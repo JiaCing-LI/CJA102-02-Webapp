@@ -7,14 +7,14 @@ import java.util.List;
 import com.google.gson.Gson;
 
 import fftest.procpn.model.ProCpnVO;
-import fftest.procpn.service.ProCpnService;
+import fftest.procpn.service.ProCpnServiceImp;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class ProCpnServlet extends HttpServlet {
-	private ProCpnService svc = new ProCpnService();
+	private ProCpnServiceImp svc = new ProCpnServiceImp();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

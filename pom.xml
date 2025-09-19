@@ -59,10 +59,6 @@
         <artifactId>gson</artifactId>
         <version>2.11.0</version>
     </dependency>
-    <dependency>
-    	<groupId>CJA102G1</groupId>
-    	<artifactId>CJA102G1</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+    
   </dependencies>
 </project>
