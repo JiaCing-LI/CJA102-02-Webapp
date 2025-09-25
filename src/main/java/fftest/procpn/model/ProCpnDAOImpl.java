@@ -36,7 +36,7 @@ public class ProCpnDAOImpl implements ProCpnDAO {
 	public List<ProCpnVO> getAll(Session session) {
 		return session.createQuery("from ProCpnVO", ProCpnVO.class).list();
 	}
-
+	// 測試
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
@@ -47,22 +47,22 @@ public class ProCpnDAOImpl implements ProCpnDAO {
 			ProCpnVO one = dao.findByPrimaryKey(session, cpn.getProCpnId());
 			// ✅ Delete
 			dao.delete(session, one.getProCpnId());
-//			tx = session.beginTransaction();
-//
-//			ProCpnDAO dao = new ProCpnDAOImpl();
-//
-//			ProCpnVO cpn = new ProCpnVO();
-//			cpn.setCpnName("滿1000折50");
-//			cpn.setDiscType((byte) 0);
-//			cpn.setDiscValue(new BigDecimal("50.00"));
-//			cpn.setMinSpend(500);
-//			cpn.setApplScope((byte) 0);
-//			cpn.setIsActive((byte) 1);
-//
-//			dao.insert(session, cpn);
-//
-//			tx.commit(); // ✅ 記得提交
-//			System.out.println("Insert OK, new ID = " + cpn.getProCpnId());
+			// tx = session.beginTransaction();
+			//
+			// ProCpnDAO dao = new ProCpnDAOImpl();
+			//
+			// ProCpnVO cpn = new ProCpnVO();
+			// cpn.setCpnName("滿1000折50");
+			// cpn.setDiscType((byte) 0);
+			// cpn.setDiscValue(new BigDecimal("50.00"));
+			// cpn.setMinSpend(500);
+			// cpn.setApplScope((byte) 0);
+			// cpn.setIsActive((byte) 1);
+			//
+			// dao.insert(session, cpn);
+			//
+			// tx.commit(); // ✅ 記得提交
+			// System.out.println("Insert OK, new ID = " + cpn.getProCpnId());
 
 		} catch (Exception e) {
 			if (tx != null) {
@@ -75,17 +75,18 @@ public class ProCpnDAOImpl implements ProCpnDAO {
 		}
 
 		// 查詢全部
-//		try {
-//			ProCpnDAO dao = new ProCpnDAOImpl();
-//			List<ProCpnVO> list = dao.getAll(session);
-//
-//			for (ProCpnVO cpn : list) {
-//				System.out.println(cpn.getProCpnId() + " | " + cpn.getCpnName() + " | " + cpn.getDiscValue());
-//			}
-//		} finally {
-//			session.close();
-//			HibernateUtil.shutdown();
-//		}
+		// try {
+		// ProCpnDAO dao = new ProCpnDAOImpl();
+		// List<ProCpnVO> list = dao.getAll(session);
+		//
+		// for (ProCpnVO cpn : list) {
+		// System.out.println(cpn.getProCpnId() + " | " + cpn.getCpnName() + " |
+		// " + cpn.getDiscValue());
+		// }
+		// } finally {
+		// session.close();
+		// HibernateUtil.shutdown();
+		// }
 	}
 
 }

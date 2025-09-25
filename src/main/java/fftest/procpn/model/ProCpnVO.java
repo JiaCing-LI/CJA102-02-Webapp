@@ -141,8 +141,10 @@ public class ProCpnVO implements java.io.Serializable {
 		super();
 	}
 
-	public ProCpnVO(Integer proCpnId, String cpnName, Byte discType, BigDecimal discValue, Integer minSpend,
-			Date startDate, Integer validDays, String cpnDesc, Byte isActive, Timestamp crtAt, Byte applScope) {
+	public ProCpnVO(Integer proCpnId, String cpnName, Byte discType,
+			BigDecimal discValue, Integer minSpend, Date startDate,
+			Integer validDays, String cpnDesc, Byte isActive, Timestamp crtAt,
+			Byte applScope) {
 		super();
 		this.proCpnId = proCpnId;
 		this.cpnName = cpnName;

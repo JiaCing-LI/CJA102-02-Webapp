@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
-MemProCpnService memProCpnSvc = new MemProCpnService();
+MemProCpnServiceImpl memProCpnSvc = new MemProCpnServiceImpl();
     List<MemProCpnVO> list = memProCpnSvc.getAll();
     pageContext.setAttribute("list",list);
 %>
